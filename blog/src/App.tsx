@@ -1,20 +1,20 @@
-import './App.css'
-import CategorySection from './components/CategorySection'
-import Post from './components/Post'
-import SideBar from './components/Sidebar'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Layout from "./Layout/Layout";
+import PostWrite from "./pages/PostWrite";
+import PostList from "./components/PostLIst";
 
 function App() {
   return (
-    <div className="flex">
-      <SideBar />
-      <div className="flex-1 flex-col">
-        <CategorySection />
-        <Post/>
-        <Post/>
-        <Post/>
-      </div>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />} >
+          <Route index element={<PostList/>}/>
+          <Route path="/write" element={<PostWrite/>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
