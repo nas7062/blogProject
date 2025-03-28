@@ -5,18 +5,18 @@ function PostWrite() {
 
   return (
     <div className="flex">
-      <div className="w-5/6 mx-auto border ">
+      <div className="w-1/2 mx-auto border ">
         <form action="" className="flex flex-col gap-4">
           <label htmlFor="">
-            제목: <input type="text" className="w-2/5" />
+            제목: <input type="text" className="w-5/6" />
           </label>
           <label htmlFor="">
             카테고리:
-            <input type="text" className="w-2/5" />
+            <input type="text" className="w-5/6" />
           </label>
           <label htmlFor="">내용:</label>
           <textarea
-            className="min-h-96 w-2/5"
+            className="min-h-96 w-5/6"
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
