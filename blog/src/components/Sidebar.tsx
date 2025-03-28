@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import ProfileImage from "../assets/profile.jpg";
 function SideBar() {
   return (
-    <div className="max-w-80 bg-green-200 h-screen sticky top-0 float-left">
+    <div className="max-w-64 bg-green-200 h-screen sticky top-0 float-left">
       <div className="w-3/5 mx-auto text-center ">
         <img src={ProfileImage} alt="text" className="mt-44 border-r-0 rounded-full" />
         <p className="mt-4">프론트엔드 개발자</p>
