@@ -5,6 +5,7 @@ function PostList() {
   return(
     <div>
       <Post/>
+      <Post/>
     </div>
   );
 }

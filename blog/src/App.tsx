@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
 import Layout from "./Layout/Layout";
 import PostWrite from "./pages/PostWrite";
 import PostList from "./components/PostLIst";
