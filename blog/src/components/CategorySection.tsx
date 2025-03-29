@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function CategorySection() {
-  const [login, setlogin] = useState<boolean>(false);
+  const [login, setlogin] = useState<boolean>(true);
   return (
     <div className="h-72 bg-sky-100 w-full relative text-center justify-center align">
       <div className="text-center relative   ">
