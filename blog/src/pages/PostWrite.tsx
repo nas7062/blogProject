@@ -1,9 +1,9 @@
-import { useState } from "react";
+import {useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-
-function PostWrite() {
-  const sampleText = `
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+const sampleText = `
 # 제목 테스트
 **굵게**  
 _기울임_  
@@ -18,17 +18,27 @@ _기울임_
 console.log("Hello, world!");
 \`\`\`
 `;
+function PostWrite() {
   const [title, setTitle] = useState<string>("");
   const [category, setCategory] = useState<string>("");
   const [text, setText] = useState<string>(sampleText);
-
-  const submitPost = (e: React.FormEvent) => {
+  const navigate = useNavigate();
+  const submitPost = async (e: React.FormEvent) => {
     e.preventDefault();
     if (title.trim() === "" || category.trim() === "" || text.trim() === "") return;
-    console.log(title, category, text);
-    setTitle("");
-    setCategory("");
-    setText(sampleText);
+    try {
+      const response = await axios.post("http://localhost:8080/addPost", {
+        title,
+        category,
+        content:text,
+      },{
+        headers: { "Content-Type": "application/json" }, // JSON 요청 명시
+      });
+      alert(response.data);
+      navigate("/");
+    } catch (error) {
+      console.error("전송 실패:", error);
+    }
   };
   return (
     <div className="grid grid-cols-2 h-screen border">
