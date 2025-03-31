@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />} >
-          <Route index element={<PostList/>}/>
+          <Route path="/"  element={<PostList/>}/>
           <Route path="/write" element={<PostWrite/>} />
         </Route>
       </Routes>
