@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Post from "./Post";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
+import Modal from "./Modal";
 export interface PostData {
   id: number;
   title: string;
