@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Post from "./Post";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
-import Modal from "./Modal";
 export interface PostData {
   id: number;
   title: string;
@@ -18,6 +17,7 @@ function PostList() {
 
   const queryParams = new URLSearchParams(location.search);
   const category = queryParams.get("category");
+  console.log(posts);
   useEffect(() => {
     const url = category
       ? `http://localhost:8080/getPostByCategory/${category}`
