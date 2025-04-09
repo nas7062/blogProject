@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Image from "../assets/profile.jpg";
 import { PostData } from "./PostLIst";
 import ReactMarkdown from "react-markdown";
@@ -10,6 +11,7 @@ function Post({post}:{post:PostData}) {
     <div className="grid grid-cols-[0.5fr_2fr_1fr] border-y py-4 border-gray-200  mt-10">
       <div>
       </div>
+      <Link to={`/post/${post.id}`}>
       <div className="flex flex-col ">
         <h3 className="text-3xl font-bold">{post.title}</h3>
         <p className="mt-2">{formatDate(post.createdAt)} / {post.category}</p>
@@ -19,8 +21,9 @@ function Post({post}:{post:PostData}) {
             </ReactMarkdown>
           </p>
       </div>
-      
+      </Link>
       <img src={Image} alt="image" className="w-72 max-w-full object-contain flex-shrink-0 min-h-72" />
+      
     </div>
   );
 }
