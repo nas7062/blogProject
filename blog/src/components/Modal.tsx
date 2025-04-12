@@ -29,6 +29,7 @@ const Modal: React.FC<ModalProps> = ({onClose}) =>{
         alert("로그인 성공");
         sessionStorage.setItem("token",res.data.token);
         onClose();
+        window.location.reload();
       }
     })
     .catch((err)=> {
