@@ -23,7 +23,7 @@ const PostDetail = () => {
   }, []);
 
   return (
-    <div className="w-2/4 mx-auto border-red-200 border">
+    <div className="w-3/4 mx-auto border-gray-200 mt-10 border">
       {post ? (
         <div className="flex flex-col gap-2">
           <h1>{post.title}</h1>
