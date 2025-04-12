@@ -8,7 +8,7 @@ function CategorySection() {
   const location = useLocation();
   const { id } = useParams<{ id: string }>();
   const [title, setTitle] = useState<string | null>("전체보기");
-
+  const [user, setUser] = useState<string | null>(sessionStorage.getItem("token"));
   const queryParams = new URLSearchParams(location.search);
   const category = queryParams.get("category");
 
@@ -36,7 +36,11 @@ function CategorySection() {
         </h2>
       </div>
       <h3 className="float-right mr-4 mt-4 bg-lime-200 px-1.5 py-1.5  rounded-xl cursor-pointer">
-        <Link to="/write"> 새 글 작성</Link> : <p onClick={() => setIsOpen(true)}>로그인</p>
+        {user ? (
+          <Link to="/write"> 새 글 작성</Link>
+        ) : (
+          <p onClick={() => setIsOpen(true)}>로그인</p>
+        )}
       </h3>
       {isOpen && <Modal onClose={() => setIsOpen(false)} />}
     </div>
